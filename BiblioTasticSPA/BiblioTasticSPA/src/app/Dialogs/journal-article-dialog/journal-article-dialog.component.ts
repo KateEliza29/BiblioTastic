@@ -38,8 +38,9 @@ export class JournalArticleDialogComponent {
 
   private canSave(): boolean{
     var canSave = false;
-    //These are the only three that need to be not null. 
-    if (this.data.journalTitle.length > 1 && this.data.articleTitle.length > 1, this.data.author.length > 1)
+    let ratingCorrectFormat = this.data.additionalInfo.rating >=0 && this.data.additionalInfo.rating < 6;
+    let publicationYearCorrectForm = this.data.publicationYear > 1800 && this.data.publicationYear < 2026;
+    if (this.data.journalTitle.length > 1 && this.data.articleTitle.length > 1, this.data.author.length > 1 && ratingCorrectFormat)
       canSave = true;
 
     return canSave;

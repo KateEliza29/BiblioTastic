@@ -8,12 +8,12 @@ import { JournalArticle } from '../Models/JournalArticle.Model';
 })
 export class LibraryContentsService {
   //Book Stuff
-  private bookURL = 'url';
+  private bookURL = 'connstring';
   public SelectedBook! : Book;
   @Output() selectedBookChanged: EventEmitter<Book> = new EventEmitter();
 
   //Journal Article Stuff
-  private journalArticleURL = 'url';
+  private journalArticleURL = 'connstring';
   public SelectedJournalArticle! : JournalArticle;
   @Output() selectedJournalArticleChanged: EventEmitter<JournalArticle> = new EventEmitter();
 

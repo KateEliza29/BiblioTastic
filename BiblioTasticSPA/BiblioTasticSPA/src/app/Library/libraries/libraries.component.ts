@@ -40,6 +40,12 @@ export class LibrariesComponent implements OnInit {
         libraryDescription: ""
       }
     }); 
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.libraryService.GetLibraries().subscribe(result => {
+        this.libraries = result;
+      })
+    });
   }
 }
 

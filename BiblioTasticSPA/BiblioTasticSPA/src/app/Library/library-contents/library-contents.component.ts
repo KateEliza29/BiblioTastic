@@ -68,13 +68,18 @@ export class LibraryContentsComponent implements OnInit {
         additionalInfo: additionalInfo
       }
     }); 
+    dialogRef.afterClosed().subscribe(result => {
+      this.libraryContentsService.GetBooks(this.libraryService.selectedLibrary.libraryID).subscribe(result => {
+        this.books = result;
+      })
+    });
   }
 
 
   public addNewJournalArticle() {
     let additionalInfo = {
       additionalInfoID: 0,
-      resourceType: 1,
+      resourceType: 2,
       resourceID: 0,
       summary: "",
       keyWords: "",
@@ -96,5 +101,10 @@ export class LibraryContentsComponent implements OnInit {
         additionalInfo: additionalInfo
       }
     }); 
+    dialogRef.afterClosed().subscribe(result => {
+      this.libraryContentsService.GetJournalArticles(this.libraryService.selectedLibrary.libraryID).subscribe(result => {
+        this.journalArticles = result;
+      })
+    });
   }
 }
