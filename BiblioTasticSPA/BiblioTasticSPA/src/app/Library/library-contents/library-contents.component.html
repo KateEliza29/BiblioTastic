@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="cardHeader">
+        <div class="cardHeaderText"> Library Contents
+        </div>
+    </div>
+    <div class="cardBody">
+        <mat-button-toggle-group [(ngModel)]="contentsType" name="contentsType" aria-label="Contents Type">
+            <mat-button-toggle value="books">Books</mat-button-toggle>
+            <mat-button-toggle value="journalArticles">Articles</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div *ngIf="contentsType=='books'">
+            <app-detail-card *ngFor="let book of books" [type]="'book'" [book]="book"></app-detail-card>
+        </div>
+        <div *ngIf="contentsType=='journalArticles'">
+            <app-detail-card *ngFor="let journalArticle of journalArticles" [type]="'journalArticle'" [journalArticle]="journalArticle"></app-detail-card>
+        </div>
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faBook" (click)="addNewBook()"></fa-icon>
+        <fa-icon class="iconButton" [icon]="faNewspaper" (click)="addNewJournalArticle()"></fa-icon>
+    </div>
+</div>

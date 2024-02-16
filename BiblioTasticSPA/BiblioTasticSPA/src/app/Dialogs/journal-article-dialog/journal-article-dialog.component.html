@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="cardHeader">
+        <div class="cardHeaderText" *ngIf="data.journalArticleID == 0">Add New Book</div>
+        <div class="cardHeaderText" *ngIf="data.journalArticleID > 0">Edit Book</div>
+    </div>
+    <div class="cardBody">
+        <mat-form-field>
+            <mat-label>Article Title:</mat-label>
+            <input matInput [(ngModel)]="data.articleTitle">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Journal Title:</mat-label>
+            <input matInput [(ngModel)]="data.journalTitle">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Publication Year:</mat-label>
+            <input matInput type="number" [(ngModel)]="data.publicationYear">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Author:</mat-label>
+            <input matInput [(ngModel)]="data.author">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Volume Number:</mat-label>
+            <input matInput [(ngModel)]="data.volumeNumber">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Issue Number:</mat-label>
+            <input matInput [(ngModel)]="data.issueNumber">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Page Reference:</mat-label>
+            <input matInput [(ngModel)]="data.pageReference">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>URL:</mat-label>
+            <input matInput [(ngModel)]="data.url">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Key Words:</mat-label>
+            <input matInput [(ngModel)]="data.additionalInfo.keyWords">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Rating:</mat-label>
+            <input matInput type="number" min="0" max="5" [(ngModel)]="data.additionalInfo.rating">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Summary:</mat-label>
+            <textarea matInput [(ngModel)]="data.additionalInfo.summary"></textarea>
+        </mat-form-field>
+        <div class="save-message">
+            <p *ngIf="saveMessage">{{saveMessage}}</p>
+        </div>
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faFloppyDisk" (click)="saveJournalArticle()"></fa-icon>
+    </div>
+</div>

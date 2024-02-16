@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="cardHeader">
+        <div class="cardHeaderText">Libraries</div>
+    </div>
+    <div class="cardBody">
+        <app-detail-card *ngFor="let library of libraries" [type]="'lib'" [library]="library"></app-detail-card>
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faCirclePlus" (click)="addNewLibrary()"></fa-icon>
+    </div>
+</div>

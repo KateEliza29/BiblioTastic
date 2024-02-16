@@ -1,0 +1,37 @@
+<div class="card" *ngIf="type=='lib'">
+    <div class="cardHeader">
+        <div class="cardHeaderText">{{library.libraryName}} </div>
+    </div>
+    <div class="cardBody" (click)="libraryClick(library)">
+        {{library.libraryDescription}}
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faPenToSquare" (click)="editLibrary(library)"></fa-icon>
+    </div>
+</div>
+
+<div class="card" *ngIf="type=='book'">
+    <div class="cardHeader">
+        <div class="cardHeaderText">{{book.title}} </div>
+    </div>
+    <div class="cardBody" (click)="bookClick(book)">
+        {{book.author}}
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faPenToSquare" (click)="editBook(book)"></fa-icon>
+    </div>
+</div>
+
+<div class="card" *ngIf="type=='journalArticle'">
+    <div class="cardHeader">
+        <div class="cardHeaderText">{{journalArticle.articleTitle}} </div>
+    </div>
+    <div class="cardBody" (click)="journalArticleClick(journalArticle)">
+        {{journalArticle.journalTitle}}<br>
+        {{journalArticle.author}}
+    </div>
+    <div class="cardFooter">
+        <fa-icon class="iconButton" [icon]="faPenToSquare" (click)="editJournalArticle(journalArticle)"></fa-icon>
+    </div>
+</div>
+

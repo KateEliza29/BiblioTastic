@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="cardHeader">
+        <div class="cardHeaderText">Details</div>
+    </div>
+    <div *ngIf="book != null" class="cardBody">
+        <h2>{{book.title}}</h2>
+        <h3>{{book.author}}</h3>
+        <h4>{{book.publisher}}, {{book.publicationLocation}} ({{book.publicationYear}})</h4>
+        <a target="_blank" [href]="book.url">Click here to access</a>
+        <br>
+        <h4>Key Words:</h4>
+        <p>{{book.additionalInfo.keyWords}}</p>
+        <br>
+        <h4>Summary:</h4>
+        <p>{{book.additionalInfo.summary}}</p>
+        <br>
+        <app-star-rating [rating]="book.additionalInfo.rating"></app-star-rating>
+        <br>
+        <h4>Harvard Reference:</h4>
+        <p>{{book.harvardReference}}</p>
+    </div>
+
+    <div *ngIf="journalArticle != null" class="cardBody">
+        <h2>{{journalArticle.articleTitle}}</h2>
+        <h3>{{journalArticle.journalTitle}}</h3>
+        <h4>{{journalArticle.author}}</h4>
+        <p>{{journalArticle.volumeNumber}} : {{journalArticle.issueNumber}}</p>
+        <p>{{journalArticle.pageReference}}</p>
+        <a target="_blank" [href]="journalArticle.url">Click here to access</a>
+        <br>
+        <h4>Key Words:</h4>
+        <p>{{journalArticle.additionalInfo.keyWords}}</p>
+        <br>
+        <h4>Summary:</h4>
+        <p>{{journalArticle.additionalInfo.summary}}</p>
+        <br>
+        <app-star-rating [rating]="journalArticle.additionalInfo.rating"></app-star-rating>
+        <br>
+        <h4>Harvard Reference:</h4>
+        <p>{{journalArticle.harvardReference}}</p>
+    </div>
+    <div class="cardFooter">
+    </div>
+</div>
