@@ -6,7 +6,7 @@ import { Library } from '../Models/Library.Model';
   providedIn: 'root'
 })
 export class LibraryService {
-  private libraryURL = 'connstring';
+  private libraryURL = 'url';
   public selectedLibrary! : Library;
   @Output() selectedLibraryChanged: EventEmitter<Library> = new EventEmitter();
 
