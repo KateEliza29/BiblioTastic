@@ -2,7 +2,10 @@
 ## Access Information
 [Access it here](https://bibliotastic.azurewebsites.net)
 
-The authentication is through Microsoft Entra ID, through my tenancy. To access, use the username bibliotasticuser@kateeliza2901outlook.onmicrosoft.com and the password FrightHorrorScreamFest90&@@ 
+Authentication is through Microsoft Entra ID, through my tenancy. I've used the tenancy/Entra ID authentication method instead of public authentication using personal accounts because it reflects how organisations would manage company applications, and one of the aims of this project was to understand how organisations would host tenancy-restricted web apps. 
+Because of the authentication model, access is through a tenancy email address and password:
+Username: bibliotasticuser@kateeliza2901outlook.onmicrosoft.com 
+Password: FrightHorrorScreamFest90&@@ 
 Please don't set up MFA on this! It's a demo project and I'm keeping one set of credentials open on here so people can try out the site.
 
 ## Description
